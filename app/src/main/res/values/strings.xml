@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">forecast</string>
     <string name="weather_welcome_info">Joy in simplicity</string>
+    <string name="favourite">Favourite</string>
+    <string name="home">Home</string>
+    <string name="alert">Alert</string>
+    <string name="settings">Settings</string>
 </resources>
