@@ -21,6 +21,8 @@ object SettingsPrefs {
         prefs = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
     }
 
+
+
     fun saveSettings(settings: Settings) {
         val json = gson.toJson(settings)
         prefs.edit().putString(KEY_SETTINGS, json).apply()

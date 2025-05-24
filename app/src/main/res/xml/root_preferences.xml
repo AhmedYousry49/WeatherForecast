@@ -1,0 +1,58 @@
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:theme="@style/PreferenceThemeOverlay.v14.Material">
+
+    <PreferenceCategory
+        app:title="General Settings"
+        app:key="general_settings"
+        app:icon="@drawable/settings"
+        >
+
+        <ListPreference
+            app:key="language"
+            app:title="Language"
+            android:summary="Choose app language"
+            app:entries="@array/language_entries"
+            app:entryValues="@array/language_values"
+            app:defaultValue="ENGLISH"
+            app:useSimpleSummaryProvider="true"
+            app:icon="@drawable/language_24px" />
+
+        <ListPreference
+            app:key="temp_unit"
+            app:title="Temperature Unit"
+            android:summary="Select preferred temperature unit"
+            app:entries="@array/temp_unit_entries"
+            app:entryValues="@array/temp_unit_values"
+            app:defaultValue="CELSIUS"
+            app:useSimpleSummaryProvider="true"
+            app:icon="@drawable/thermostat_24px" />
+
+        <ListPreference
+            app:key="wind_speed_unit"
+            app:title="Wind Speed Unit"
+            android:summary="Choose wind speed measurement unit"
+            app:entries="@array/wind_speed_unit_entries"
+            app:entryValues="@array/wind_speed_unit_values"
+            app:defaultValue="KMH"
+            app:useSimpleSummaryProvider="true"
+            app:icon="@drawable/airwave_24px" />
+
+        <SwitchPreferenceCompat
+            app:key="manual_location"
+            app:title="Use Manual Location"
+            android:summary="Enable manual entry of coordinates"
+            app:defaultValue="false"
+            app:icon="@drawable/location_on_24px" />
+
+        <EditTextPreference
+            app:key="coordinates"
+            app:title="Coordinates (Lat,Long)"
+            android:summary="Only used when manual location is enabled"
+            app:dependency="manual_location"
+            app:useSimpleSummaryProvider="true"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
