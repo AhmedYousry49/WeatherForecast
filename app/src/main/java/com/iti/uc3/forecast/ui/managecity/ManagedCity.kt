@@ -1,7 +1,7 @@
 package com.iti.uc3.forecast.ui.managecity;
 
 data class ManagedCity(
-        var id: String, // Unique ID for selection/diffing
+        var id: Int, // Unique ID for selection/diffing
         val name: String,
         val country: String,
         val temperature: Int,

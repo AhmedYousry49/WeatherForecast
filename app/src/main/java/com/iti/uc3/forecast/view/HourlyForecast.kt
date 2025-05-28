@@ -1,4 +1,4 @@
-package com.iti.uc3.forecast.test
+package com.iti.uc3.forecast.view
 
 data class HourlyForecast(
     val hour: String, // e.g. "01:00"

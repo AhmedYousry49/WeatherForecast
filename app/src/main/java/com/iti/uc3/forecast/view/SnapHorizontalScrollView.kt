@@ -1,4 +1,4 @@
-package com.iti.uc3.forecast.test
+package com.iti.uc3.forecast.view
 
 
 import android.content.Context

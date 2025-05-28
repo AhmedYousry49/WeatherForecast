@@ -1,4 +1,4 @@
-package com.iti.uc3.forecast.test
+package com.iti.uc3.forecast.view
 
 
 import android.content.Context
@@ -8,7 +8,6 @@ import android.view.View
 import com.iti.uc3.LocaleHelper.formatTemperature
 import com.iti.uc3.forecast.data.model.TempUnit
 import kotlin.math.max
-import kotlin.math.min
 
 class HourlyChartView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null
@@ -36,12 +35,12 @@ class HourlyChartView @JvmOverloads constructor(
     }
 
     private val pointPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        color = Color.WHITE
+        color = Color.GRAY
         style = Paint.Style.FILL
     }
 
     private val textPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        color = Color.WHITE
+        color =  Color.GRAY
         textSize = 30f
         textAlign = Paint.Align.CENTER
     }

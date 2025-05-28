@@ -7,5 +7,7 @@ enum class TempUnit {
     CELSIUS, FAHRENHEIT,KELVIN
 }
 enum class WindSpeedUnit {
-    KMH, MPH
+    MPS,   // Meters per second (default from APIs like OpenWeather)
+    KMPH,  // Kilometers per hour
+    MPH    // Miles per hour
 }

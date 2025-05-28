@@ -4,25 +4,25 @@
     android:theme="@style/PreferenceThemeOverlay.v14.Material">
 
     <PreferenceCategory
-        app:title="General Settings"
-        app:key="general_settings"
+        app:title="@string/general_settings"
+        app:key="@string/general_settings"
         app:icon="@drawable/settings"
         >
 
         <ListPreference
             app:key="language"
-            app:title="Language"
-            android:summary="Choose app language"
+            app:title="@string/language"
+            android:summary="@string/choose_app_language"
             app:entries="@array/language_entries"
             app:entryValues="@array/language_values"
-            app:defaultValue="ENGLISH"
+            app:defaultValue="en"
             app:useSimpleSummaryProvider="true"
             app:icon="@drawable/language_24px" />
 
         <ListPreference
             app:key="temp_unit"
-            app:title="Temperature Unit"
-            android:summary="Select preferred temperature unit"
+            app:title="@string/temperature_unit"
+            android:summary="@string/select_preferred_temperature_unit"
             app:entries="@array/temp_unit_entries"
             app:entryValues="@array/temp_unit_values"
             app:defaultValue="CELSIUS"
@@ -31,8 +31,8 @@
 
         <ListPreference
             app:key="wind_speed_unit"
-            app:title="Wind Speed Unit"
-            android:summary="Choose wind speed measurement unit"
+            app:title="@string/wind_speed_unit"
+            android:summary="@string/choose_wind_speed_measurement_unit"
             app:entries="@array/wind_speed_unit_entries"
             app:entryValues="@array/wind_speed_unit_values"
             app:defaultValue="KMH"
@@ -41,15 +41,15 @@
 
         <SwitchPreferenceCompat
             app:key="manual_location"
-            app:title="Use Manual Location"
-            android:summary="Enable manual entry of coordinates"
+            app:title="@string/use_manual_location"
+            android:summary="@string/enable_manual_entry_of_coordinates"
             app:defaultValue="false"
             app:icon="@drawable/location_on_24px" />
 
         <EditTextPreference
             app:key="coordinates"
-            app:title="Coordinates (Lat,Long)"
-            android:summary="Only used when manual location is enabled"
+            app:title="@string/city_name"
+            android:summary="@string/only_used_when_manual_location_is_enabled"
             app:dependency="manual_location"
             app:useSimpleSummaryProvider="true"/>
 

@@ -30,11 +30,13 @@ abstract class WeatherDatabase : RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     WeatherDatabase::class.java,
-                    "weather_database4"
+                    "weather_database.db"
                 ).build()
                 INSTANCE = instance
                 instance
             }
         }
     }
+
+
 }

@@ -16,6 +16,7 @@ import com.iti.uc3.LocaleHelper
 import com.iti.uc3.LocaleHelper.convertTemperature
 import com.iti.uc3.LocaleHelper.convertformatTemperature
 import com.iti.uc3.forecast.R
+import com.iti.uc3.forecast.alerts.WeatherAlertFragment
 import com.iti.uc3.forecast.data.model.CityEntity
 import com.iti.uc3.forecast.data.model.DailyTemperatureRange
 import com.iti.uc3.forecast.data.model.ForecastItemEntity
@@ -258,7 +259,7 @@ class HomeWeatherDetailsFragment(val CityName: String=SettingsPrefs.getCurrentCi
                 }
                 R.id.nav_alert -> {
                     (requireActivity() as? IMainView)?.navigateTo(
-                        SettingsFragment(),
+                        WeatherAlertFragment(),
                         true
                     )
                     true

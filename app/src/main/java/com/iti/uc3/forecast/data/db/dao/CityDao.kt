@@ -12,7 +12,10 @@ interface CityDao {
     suspend fun insertCity(city: CityEntity)
 
     @Query("SELECT * FROM cities WHERE id = :id")
-    suspend fun getCity(id: Int): CityEntity?
+    suspend fun getCitybyId(id: Int): CityEntity?
+
+    @Query("SELECT * FROM cities WHERE name = :name")
+    suspend fun getCitybyName(name: String): CityEntity?
 
     @Query("SELECT * FROM cities WHERE fav = 1")
     suspend fun getFavCities(): List<CityEntity>
@@ -27,5 +30,8 @@ interface CityDao {
     @Query("DELETE FROM cities")
     suspend fun deleteAllCities()
 
+
+    @Query("SELECT COUNT(*) FROM cities WHERE id = :id")
+    suspend fun isCityExists(id: Int): Int
 
 }

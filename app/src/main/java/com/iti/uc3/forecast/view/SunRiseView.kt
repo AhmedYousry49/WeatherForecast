@@ -1,4 +1,4 @@
-package com.iti.uc3.forecast.test
+package com.iti.uc3.forecast.view
 
 import android.content.Context
 import android.graphics.*
@@ -35,7 +35,7 @@ class SunRiseView @JvmOverloads constructor(
 
     private val pathPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         style = Paint.Style.STROKE
-        color = Color.WHITE // Color of the dashed line
+        color = Color.GRAY // Color of the dashed line
         strokeWidth = 4f
         pathEffect = DashPathEffect(floatArrayOf(10f, 10f), 0f)
     }
@@ -43,7 +43,7 @@ class SunRiseView @JvmOverloads constructor(
     private val gradientPaint = Paint(Paint.ANTI_ALIAS_FLAG)
 
     private val textPaint = TextPaint(Paint.ANTI_ALIAS_FLAG).apply {
-        color = Color.WHITE
+        color = Color.GRAY
         textSize = 40f // Adjust as needed
         textAlign = Paint.Align.CENTER
     }

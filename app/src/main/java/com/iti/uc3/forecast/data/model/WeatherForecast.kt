@@ -11,6 +11,7 @@ import com.iti.uc3.forecast.data.db.Converters
 
 @Entity(
     tableName = "forecast_items",
+    primaryKeys = ["dt", "cityId"], // 👈 Composite primary key
     foreignKeys = [
         ForeignKey(
             entity = CityEntity::class,
@@ -22,7 +23,6 @@ import com.iti.uc3.forecast.data.db.Converters
     indices = [Index("cityId")]
 )
 data class ForecastItemEntity(
-    @PrimaryKey(autoGenerate = true)
     val id: Int,
     var dt: Long,
     var cityId: Int, // FK reference to CityEntity
