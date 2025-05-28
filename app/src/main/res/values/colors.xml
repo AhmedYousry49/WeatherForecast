@@ -7,4 +7,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="color_sun_cover_bg">#fffafafa</color>
+
+    <color name="curve_view_line_color">#ffcccccc</color>
 </resources>

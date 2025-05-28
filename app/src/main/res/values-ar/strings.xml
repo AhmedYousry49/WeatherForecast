@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">توقعات الطقس</string>
+    <string name="weather_welcome_info">الفرح في البساطة</string>
+    <string name="favourite">المفضلة</string>
+    <string name="home">الرئيسية</string>
+    <string name="alert">تنبيه</string>
+    <string name="settings">الإعدادات</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">الرسائل</string>
+    <string name="sync_header">المزامنة</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">توقيعك</string>
+    <string name="reply_title">الإجراء الافتراضي للرد</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">مزامنة البريد الإلكتروني دوريًا</string>
+    <string name="attachment_title">تحميل المرفقات الواردة</string>
+    <string name="attachment_summary_on">تحميل المرفقات الواردة تلقائيًا</string>
+    <string name="attachment_summary_off">تحميل المرفقات فقط عند الطلب يدويًا</string>
+    <string name="language">اللغة</string>
+    <string name="general_settings">الإعدادات العامة</string>
+    <string name="temperature_unit">وحدة درجة الحرارة</string>
+    <string name="wind_speed_unit">وحدة سرعة الرياح</string>
+    <string name="use_manual_location">استخدام الموقع اليدوي</string>
+    <string name="city_name">اسم المدينة</string>
+    <string name="only_used_when_manual_location_is_enabled">يستخدم فقط عند تفعيل الموقع اليدوي</string>
+    <string name="enable_manual_entry_of_coordinates">تمكين الإدخال اليدوي للإحداثيات</string>
+    <string name="choose_wind_speed_measurement_unit">اختر وحدة قياس سرعة الرياح</string>
+    <string name="select_preferred_temperature_unit">اختر وحدة درجة الحرارة المفضلة</string>
+    <string name="choose_app_language">اختر لغة التطبيق</string>
+    <string name="privacy_dialog_message">لتقديم خدمات الطقس، نقوم بجمع ومشاركة بيانات موقعك (مثل الشارع وخط العرض/خط الطول) مع OpenWeather، وذلك وفقًا لـ <a href="https://openweather.co.uk/privacy-policy">سياسة الخصوصية</a> الخاصة بها.<br/><br/>
+اقرأ <a href="https://www.example.com/privacy">سياسة الخصوصية وشروط الخدمة</a> الخاصة بنا لمزيد من المعلومات.<br/><br/>
+بالنقر على "موافق"، فإنك تقبل بذلك. بخلاف ذلك، لن يتمكن التطبيق من تقديم خدمات الطقس.</string>
+</resources>

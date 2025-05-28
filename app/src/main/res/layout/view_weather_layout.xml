@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurface">
+
+    <!-- Header Container with Background Image -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/headerContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="300dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Background Image -->
+        <ImageView
+            android:id="@+id/weatherBackgroundImageView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Toolbar -->
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="0dp"
+            android:layout_height="?attr/actionBarSize"
+            app:title="Sandu County"
+            app:titleTextColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/optionsMenuButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:padding="16dp"
+                android:src="@drawable/menu_24px"
+                app:tint="@android:color/white" />
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+        <!-- Current Temperature -->
+        <TextView
+            android:id="@+id/currentTemperatureText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="28dp"
+            android:layout_marginBottom="88dp"
+            android:textColor="@android:color/white"
+            android:textSize="72sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="20°C" />
+
+        <TextView
+            android:id="@+id/tempRangeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/currentTemperatureText"
+            app:layout_constraintTop_toBottomOf="@+id/currentTemperatureText"
+            tools:text="23/19°C" />
+
+        <TextView
+            android:id="@+id/currentConditionText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/tempRangeText"
+            app:layout_constraintTop_toBottomOf="@+id/tempRangeText"
+            tools:text="Cloudy" />
+
+        <!-- Wind Speed -->
+        <ImageView
+            android:id="@+id/windIcon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="12dp"
+            android:src="@drawable/air_24px"
+            app:layout_constraintBottom_toTopOf="@+id/humidityIcon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:tint="@android:color/white" />
+
+        <TextView
+            android:id="@+id/windSpeedText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/windIcon"
+            app:layout_constraintStart_toEndOf="@+id/windIcon"
+            app:layout_constraintTop_toTopOf="@+id/windIcon"
+            tools:text="3.2 km/h" />
+
+        <!-- Humidity -->
+        <ImageView
+            android:id="@+id/humidityIcon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="104dp"
+            android:src="@drawable/humidity_percentage_24px"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:tint="@android:color/white" />
+
+        <TextView
+            android:id="@+id/humidityText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/humidityIcon"
+            app:layout_constraintStart_toEndOf="@+id/humidityIcon"
+            app:layout_constraintTop_toTopOf="@+id/humidityIcon"
+            tools:text="99%" />
+
+        <!-- Rain -->
+        <ImageView
+            android:id="@+id/rainIcon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="76dp"
+            android:src="@drawable/rainy_24px"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:tint="@android:color/white" />
+
+        <TextView
+            android:id="@+id/rainText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/rainIcon"
+            app:layout_constraintStart_toEndOf="@+id/rainIcon"
+            app:layout_constraintTop_toTopOf="@+id/rainIcon"
+            tools:text="3.4 mm" />
+
+        <!-- Weather Warning (Optional) -->
+        <TextView
+            android:id="@+id/weatherWarningText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="24dp"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:visibility="gone"
+            app:drawableStartCompat="@drawable/warning_24px"
+            app:drawableTint="@android:color/white"
+            app:layout_constraintBottom_toTopOf="@+id/windIcon"
+            app:layout_constraintEnd_toStartOf="@+id/currentTemperatureText"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.873"
+            tools:text="Yellow Warning for Storms"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Scrollable Content -->
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headerContainer">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="16dp">
+
+                <!-- Hourly Forecast Section -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/hourly_forecast"
+                    android:textColor="#4A90E2"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <!-- Hourly Forecast Graph -->
+                <HorizontalScrollView
+                    android:id="@+id/hourlyScroll"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:fillViewport="true"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <com.iti.uc3.forecast.view.HourlyChartView
+                            android:id="@+id/hourlyChart"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <!-- Extended Forecast Section -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/extended_forecast"
+                    android:textColor="#4A90E2"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/extendedForecastRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="5"
+                    tools:listitem="@layout/item_extended_forecast" />
+
+                <!-- Current Conditions Section -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <!-- Title with accent bar -->
+                    <View
+                        android:id="@+id/titleAccentBar"
+                        android:layout_width="4dp"
+                        android:layout_height="0dp"
+                        android:background="#4A90E2"
+                        app:layout_constraintBottom_toBottomOf="@+id/currentConditionsTitle"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/currentConditionsTitle" />
+
+                    <TextView
+                        android:id="@+id/currentConditionsTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="@string/current_conditions"
+                        android:textColor="#4A90E2"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@+id/titleAccentBar"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <!-- SunRiseView with proper constraints -->
+                    <com.iti.uc3.forecast.view.SunRiseView
+                        android:id="@+id/sunRiseViewComponent"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_marginTop="24dp"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_conditions"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/currentConditionsTitle"
+                        app:layout_constraintWidth_percent="0.55" />
+
+                    <!-- Responsive guideline -->
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline_vertical_conditions"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.55" />
+
+                    <!-- Air Quality with icon -->
+                    <ImageView
+                        android:id="@+id/airQualityIcon"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="16dp"
+                        android:src="@drawable/air_24px"
+                        app:layout_constraintBottom_toBottomOf="@+id/airQualityLabel"
+                        app:layout_constraintStart_toEndOf="@+id/guideline_vertical_conditions"
+                        app:layout_constraintTop_toTopOf="@+id/airQualityLabel" />
+
+                    <TextView
+                        android:id="@+id/airQualityLabel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="Air quality"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@+id/airQualityValue"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/airQualityIcon"
+                        app:layout_constraintTop_toTopOf="@+id/sunRiseViewComponent"
+                        app:layout_constraintVertical_chainStyle="packed" />
+
+                    <TextView
+                        android:id="@+id/airQualityValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="0, Good"
+                        android:textColor="#4CAF50"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toTopOf="@+id/divider1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/airQualityLabel"
+                        app:layout_constraintTop_toBottomOf="@+id/airQualityLabel" />
+
+                    <!-- Divider -->
+                    <View
+                        android:id="@+id/divider1"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="#1A000000"
+                        app:layout_constraintBottom_toTopOf="@+id/uvIndexIcon"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/airQualityIcon"
+                        app:layout_constraintTop_toBottomOf="@+id/airQualityValue" />
+
+                    <!-- UV Index with icon -->
+                    <ImageView
+                        android:id="@+id/uvIndexIcon"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/nest_sunblock_24px"
+                        app:layout_constraintBottom_toBottomOf="@+id/uvIndexLabel"
+                        app:layout_constraintStart_toStartOf="@+id/airQualityIcon"
+                        app:layout_constraintTop_toTopOf="@+id/uvIndexLabel" />
+
+                    <TextView
+                        android:id="@+id/uvIndexLabel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="UV index"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@+id/uvIndexValue"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/uvIndexIcon"
+                        app:layout_constraintTop_toBottomOf="@+id/divider1" />
+
+                    <TextView
+                        android:id="@+id/uvIndexValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="12, Extreme"
+                        android:textColor="#F44336"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toTopOf="@+id/divider2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/uvIndexLabel"
+                        app:layout_constraintTop_toBottomOf="@+id/uvIndexLabel" />
+
+                    <!-- Divider -->
+                    <View
+                        android:id="@+id/divider2"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="#1A000000"
+                        app:layout_constraintBottom_toTopOf="@+id/feelsLikeIcon"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/uvIndexIcon"
+                        app:layout_constraintTop_toBottomOf="@+id/uvIndexValue" />
+
+                    <!-- Feels Like with icon -->
+                    <ImageView
+                        android:id="@+id/feelsLikeIcon"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/thermostat_24px"
+                        app:layout_constraintBottom_toBottomOf="@+id/feelsLikeLabel"
+                        app:layout_constraintStart_toStartOf="@+id/uvIndexIcon"
+                        app:layout_constraintTop_toTopOf="@+id/feelsLikeLabel" />
+
+                    <TextView
+                        android:id="@+id/feelsLikeLabel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="Feels like"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@+id/feelsLikeValue"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/feelsLikeIcon"
+                        app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+                    <TextView
+                        android:id="@+id/feelsLikeValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="32°C"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/sunRiseViewComponent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/feelsLikeLabel"
+                        app:layout_constraintTop_toBottomOf="@+id/feelsLikeLabel" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

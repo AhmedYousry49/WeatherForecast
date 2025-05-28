@@ -1,0 +1,58 @@
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:theme="@style/PreferenceThemeOverlay.v14.Material">
+
+    <PreferenceCategory
+        app:title="@string/general_settings"
+        app:key="@string/general_settings"
+        app:icon="@drawable/settings"
+        >
+
+        <ListPreference
+            app:key="language"
+            app:title="@string/language"
+            android:summary="@string/choose_app_language"
+            app:entries="@array/language_entries"
+            app:entryValues="@array/language_values"
+            app:defaultValue="en"
+            app:useSimpleSummaryProvider="true"
+            app:icon="@drawable/language_24px" />
+
+        <ListPreference
+            app:key="temp_unit"
+            app:title="@string/temperature_unit"
+            android:summary="@string/select_preferred_temperature_unit"
+            app:entries="@array/temp_unit_entries"
+            app:entryValues="@array/temp_unit_values"
+            app:defaultValue="CELSIUS"
+            app:useSimpleSummaryProvider="true"
+            app:icon="@drawable/thermostat_24px" />
+
+        <ListPreference
+            app:key="wind_speed_unit"
+            app:title="@string/wind_speed_unit"
+            android:summary="@string/choose_wind_speed_measurement_unit"
+            app:entries="@array/wind_speed_unit_entries"
+            app:entryValues="@array/wind_speed_unit_values"
+            app:defaultValue="KMH"
+            app:useSimpleSummaryProvider="true"
+            app:icon="@drawable/airwave_24px" />
+
+        <SwitchPreferenceCompat
+            app:key="manual_location"
+            app:title="@string/use_manual_location"
+            android:summary="@string/enable_manual_entry_of_coordinates"
+            app:defaultValue="false"
+            app:icon="@drawable/location_on_24px" />
+
+        <EditTextPreference
+            app:key="coordinates"
+            app:title="@string/city_name"
+            android:summary="@string/only_used_when_manual_location_is_enabled"
+            app:dependency="manual_location"
+            app:useSimpleSummaryProvider="true"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

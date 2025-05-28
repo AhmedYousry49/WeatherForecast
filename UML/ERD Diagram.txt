@@ -1,0 +1,44 @@
+@startuml
+
+entity cities {
+  * id : INT <<PK>>
+  --
+  name : VARCHAR
+  country : VARCHAR
+  population : INT
+  timezone : INT
+  sunrise : BIGINT
+  sunset : BIGINT
+  coord_lat : DOUBLE
+  coord_lon : DOUBLE
+  fav : BOOLEAN
+}
+
+entity forecast_items {
+  * id : INT <<PK>>
+  --
+  dt : BIGINT
+  cityId : INT <<FK>>
+  main_temp : DOUBLE
+  main_feels_like : DOUBLE
+  main_temp_min : DOUBLE
+  main_temp_max : DOUBLE
+  main_pressure : INT
+  main_sea_level : INT
+  main_grnd_level : INT
+  main_humidity : INT
+  main_temp_kf : DOUBLE
+  weather : TEXT
+  clouds_all : INT
+  wind_speed : DOUBLE
+  wind_deg : INT
+  wind_gust : DOUBLE
+  visibility : INT
+  pop : DOUBLE
+  sys_pod : VARCHAR
+  dt_txt : VARCHAR
+}
+
+cities ||--o{ forecast_items : "cityId (FK)"
+
+@enduml

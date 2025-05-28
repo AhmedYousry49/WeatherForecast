@@ -1,0 +1,112 @@
+@startuml
+
+package "com.iti.uc3.forecast.data.model" {
+
+class CityEntity {
+  +id: Int
+  +name: String
+  +country: String
+  +population: Int
+  +timezone: Int
+  +sunrise: Long
+  +sunset: Long
+  +fav: Boolean = false
+  --
+  +coord: Coord
+}
+
+class Coord {
+  +lat: Double
+  +lon: Double
+}
+
+class ForecastItemEntity {
+  +id: Int
+  +dt: Long
+  +cityId: Int
+  +visibility: Int
+  +pop: Double
+  +dt_txt: String?
+  --
+  +main: MainWeather
+  +weather: List~WeatherCondition~
+  +clouds: Clouds
+  +wind: Wind
+  +sys: Sys
+}
+
+class MainWeather {
+  +temp: Double
+  +feels_like: Double
+  +temp_min: Double
+  +temp_max: Double
+  +pressure: Int
+  +sea_level: Int
+  +grnd_level: Int
+  +humidity: Int
+  +temp_kf: Double
+}
+
+class WeatherCondition {
+  +id: Int
+  +main: String
+  +description: String
+  +icon: String
+}
+
+class Clouds {
+  +all: Int
+}
+
+class Wind {
+  +speed: Double
+  +deg: Int
+  +gust: Double
+}
+
+class Sys {
+  +pod: String
+}
+
+class Settings {
+  +language: Language
+  +tempUnit: TempUnit
+  +windSpeedUnit: WindSpeedUnit
+  +isManualLocation: Boolean
+  +coordinates: Coord
+}
+
+enum Language {
+  ENGLISH
+  ARABIC
+}
+
+enum TempUnit {
+  CELSIUS
+  FAHRENHEIT
+  KELVIN
+}
+
+enum WindSpeedUnit {
+  KMH
+  MPH
+}
+
+}
+
+' Relationships
+CityEntity "1" -- "1" Coord : embeds >
+CityEntity "1" <-- "0..*" ForecastItemEntity : owns / FK cityId
+ForecastItemEntity "1" -- "1" MainWeather : embeds >
+ForecastItemEntity "1" -- "*" WeatherCondition : contains >
+ForecastItemEntity "1" -- "1" Clouds : embeds >
+ForecastItemEntity "1" -- "1" Wind : embeds >
+ForecastItemEntity "1" -- "1" Sys : embeds >
+Settings "1" -- "1" Coord : uses >
+
+' Dependency relationships (enum usage)
+Settings ..> Language : <<use>>
+Settings ..> TempUnit : <<use>>
+Settings ..> WindSpeedUnit : <<use>>
+
+@enduml

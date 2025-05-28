@@ -1,4 +1,57 @@
 <resources>
-    <string name="app_name">forecast</string>
+    <string name="app_name">Forecast</string>
     <string name="weather_welcome_info">Joy in simplicity</string>
+    <string name="favourite">Favourite</string>
+    <string name="home">Home</string>
+    <string name="alert">Alert</string>
+    <string name="settings">Settings</string>
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="language">Language</string>
+    <string name="general_settings">General Settings</string>
+    <string name="temperature_unit">Temperature Unit</string>
+    <string name="wind_speed_unit">Wind Speed Unit</string>
+    <string name="use_manual_location">Use Manual Location</string>
+    <string name="city_name">City name</string>
+    <string name="only_used_when_manual_location_is_enabled">Only used when manual location is enabled</string>
+    <string name="enable_manual_entry_of_coordinates">Enable manual entry of coordinates</string>
+    <string name="choose_wind_speed_measurement_unit">Choose wind speed measurement unit</string>
+    <string name="select_preferred_temperature_unit">Select preferred temperature unit</string>
+    <string name="choose_app_language">Choose app language</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="privacy_dialog_message">
+To provide weather services, we collect and share your location data (e.g., street, latitude/longitude) with OpenWeather,
+ in line with its <a href="https://openweather.co.uk/privacy-policy">Privacy Policy</a>.<br /><br />
+Read our <a href="https://www.example.com/privacy">Privacy Policy and Terms of Service</a> for more.<br /><br />
+By clicking "Agree", you accept this. Otherwise, the app won\'t be able to deliver weather services.
+</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="no_internet_connection"> You cant add with no internet</string>
+    <string name="current_conditions">Current conditions</string>
+    <string name="hourly_forecast">Hourly forecast</string>
+    <string name="extended_forecast">Extended forecast</string>
+    <string name="air_quality">Air quality</string>
+    <string name="uv_index">UV index</string>
+    <string name="feels_like">Feels like</string>
+    <string name="delete">Delete</string>
+    <string name="locating">Locating...</string>
+    <string name="weather_notification">Weather notification</string>
+    <string name="disagree">DISAGREE</string>
+    <string name="agree">AGREE</string>
+
 </resources>
